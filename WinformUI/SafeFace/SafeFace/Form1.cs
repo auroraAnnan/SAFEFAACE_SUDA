@@ -9,10 +9,13 @@ using System.Threading.Tasks;
 using System;
 using System.Windows.Forms;
 using Sunny.UI;
+using System.IO;
+using System.Net.Sockets;
+using System.Net;
 
 namespace SafeFace
 {
-    
+
     public partial class Form1 : UIHeaderAsideMainFrame
     {
         public Form1()
@@ -42,11 +45,13 @@ namespace SafeFace
             treeNode = Aside.CreateNode("Fmain3", pageIndex);
             treeNode.Text = "人像分割";
             //Aside.SetNodeItem(treeNode, new NavMenuItem(page));
-        }
 
+    }
+        
         private void Form1_Load(object sender, EventArgs e)
         {
 
         }
+
     }
 }

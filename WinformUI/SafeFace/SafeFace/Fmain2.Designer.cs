@@ -45,9 +45,8 @@
             // 
             this.uiTextBox4.ButtonSymbolOffset = new System.Drawing.Point(0, 0);
             this.uiTextBox4.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.uiTextBox4.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(249)))), ((int)(((byte)(255)))));
             this.uiTextBox4.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.uiTextBox4.Location = new System.Drawing.Point(112, 38);
+            this.uiTextBox4.Location = new System.Drawing.Point(110, 40);
             this.uiTextBox4.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.uiTextBox4.MinimumSize = new System.Drawing.Size(1, 16);
             this.uiTextBox4.Name = "uiTextBox4";
@@ -56,7 +55,6 @@
             this.uiTextBox4.RectSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.None;
             this.uiTextBox4.ShowText = false;
             this.uiTextBox4.Size = new System.Drawing.Size(149, 32);
-            this.uiTextBox4.Style = Sunny.UI.UIStyle.Custom;
             this.uiTextBox4.TabIndex = 15;
             this.uiTextBox4.Text = "检测信息";
             this.uiTextBox4.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
@@ -66,9 +64,8 @@
             // 
             this.uiTextBox3.ButtonSymbolOffset = new System.Drawing.Point(0, 0);
             this.uiTextBox3.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.uiTextBox3.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(249)))), ((int)(((byte)(255)))));
             this.uiTextBox3.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.uiTextBox3.Location = new System.Drawing.Point(865, 93);
+            this.uiTextBox3.Location = new System.Drawing.Point(863, 95);
             this.uiTextBox3.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.uiTextBox3.MinimumSize = new System.Drawing.Size(1, 16);
             this.uiTextBox3.Name = "uiTextBox3";
@@ -77,7 +74,6 @@
             this.uiTextBox3.RectSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.None;
             this.uiTextBox3.ShowText = false;
             this.uiTextBox3.Size = new System.Drawing.Size(149, 32);
-            this.uiTextBox3.Style = Sunny.UI.UIStyle.Custom;
             this.uiTextBox3.TabIndex = 14;
             this.uiTextBox3.Text = "匹配图像";
             this.uiTextBox3.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
@@ -87,9 +83,8 @@
             // 
             this.uiTextBox2.ButtonSymbolOffset = new System.Drawing.Point(0, 0);
             this.uiTextBox2.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.uiTextBox2.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(249)))), ((int)(((byte)(255)))));
             this.uiTextBox2.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.uiTextBox2.Location = new System.Drawing.Point(492, 93);
+            this.uiTextBox2.Location = new System.Drawing.Point(490, 95);
             this.uiTextBox2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.uiTextBox2.MinimumSize = new System.Drawing.Size(1, 16);
             this.uiTextBox2.Name = "uiTextBox2";
@@ -98,7 +93,6 @@
             this.uiTextBox2.RectSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.None;
             this.uiTextBox2.ShowText = false;
             this.uiTextBox2.Size = new System.Drawing.Size(149, 32);
-            this.uiTextBox2.Style = Sunny.UI.UIStyle.Custom;
             this.uiTextBox2.TabIndex = 13;
             this.uiTextBox2.Text = "检测图像";
             this.uiTextBox2.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
@@ -107,7 +101,7 @@
             // pictureBox2
             // 
             this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(753, 133);
+            this.pictureBox2.Location = new System.Drawing.Point(751, 135);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(360, 270);
             this.pictureBox2.TabIndex = 12;
@@ -116,7 +110,7 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(387, 133);
+            this.pictureBox1.Location = new System.Drawing.Point(385, 135);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(360, 270);
             this.pictureBox1.TabIndex = 11;
@@ -127,7 +121,7 @@
             this.uiTextBox1.ButtonSymbolOffset = new System.Drawing.Point(0, 0);
             this.uiTextBox1.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.uiTextBox1.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.uiTextBox1.Location = new System.Drawing.Point(41, 80);
+            this.uiTextBox1.Location = new System.Drawing.Point(39, 82);
             this.uiTextBox1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.uiTextBox1.MaximumSize = new System.Drawing.Size(400, 600);
             this.uiTextBox1.MinimumSize = new System.Drawing.Size(1, 450);
@@ -138,7 +132,6 @@
             this.uiTextBox1.RectSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.None;
             this.uiTextBox1.ShowText = false;
             this.uiTextBox1.Size = new System.Drawing.Size(300, 450);
-            this.uiTextBox1.Style = Sunny.UI.UIStyle.Custom;
             this.uiTextBox1.TabIndex = 10;
             this.uiTextBox1.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
             this.uiTextBox1.Watermark = "";
@@ -148,7 +141,7 @@
             // 
             this.end.Cursor = System.Windows.Forms.Cursors.Hand;
             this.end.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.end.Location = new System.Drawing.Point(865, 480);
+            this.end.Location = new System.Drawing.Point(863, 482);
             this.end.MinimumSize = new System.Drawing.Size(1, 1);
             this.end.Name = "end";
             this.end.Radius = 40;
@@ -161,7 +154,7 @@
             // 
             this.start.Cursor = System.Windows.Forms.Cursors.Hand;
             this.start.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.start.Location = new System.Drawing.Point(501, 480);
+            this.start.Location = new System.Drawing.Point(499, 482);
             this.start.MinimumSize = new System.Drawing.Size(1, 1);
             this.start.Name = "start";
             this.start.Radius = 40;

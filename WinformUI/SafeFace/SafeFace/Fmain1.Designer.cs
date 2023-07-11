@@ -45,11 +45,12 @@
             // 
             this.start.Cursor = System.Windows.Forms.Cursors.Hand;
             this.start.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.start.Location = new System.Drawing.Point(500, 479);
+            this.start.Location = new System.Drawing.Point(495, 483);
             this.start.MinimumSize = new System.Drawing.Size(1, 1);
             this.start.Name = "start";
             this.start.Radius = 40;
             this.start.Size = new System.Drawing.Size(140, 50);
+            this.start.Style = Sunny.UI.UIStyle.Custom;
             this.start.TabIndex = 0;
             this.start.Text = "开始检测";
             this.start.TipsFont = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
@@ -59,11 +60,12 @@
             // 
             this.end.Cursor = System.Windows.Forms.Cursors.Hand;
             this.end.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.end.Location = new System.Drawing.Point(864, 479);
+            this.end.Location = new System.Drawing.Point(859, 483);
             this.end.MinimumSize = new System.Drawing.Size(1, 1);
             this.end.Name = "end";
             this.end.Radius = 40;
             this.end.Size = new System.Drawing.Size(140, 50);
+            this.end.Style = Sunny.UI.UIStyle.Custom;
             this.end.TabIndex = 1;
             this.end.Text = "停止检测";
             this.end.TipsFont = new System.Drawing.Font("微软雅黑", 12F);
@@ -74,9 +76,8 @@
             this.uiTextBox1.ButtonSymbolOffset = new System.Drawing.Point(0, 0);
             this.uiTextBox1.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.uiTextBox1.FillColorGradientDirection = System.Windows.Forms.FlowDirection.RightToLeft;
-            this.uiTextBox1.FillReadOnlyColor = System.Drawing.Color.White;
             this.uiTextBox1.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.uiTextBox1.Location = new System.Drawing.Point(40, 79);
+            this.uiTextBox1.Location = new System.Drawing.Point(35, 83);
             this.uiTextBox1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.uiTextBox1.MaximumSize = new System.Drawing.Size(400, 600);
             this.uiTextBox1.MinimumSize = new System.Drawing.Size(1, 450);
@@ -98,7 +99,7 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(386, 132);
+            this.pictureBox1.Location = new System.Drawing.Point(381, 136);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(360, 270);
             this.pictureBox1.TabIndex = 3;
@@ -107,7 +108,7 @@
             // pictureBox2
             // 
             this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(752, 132);
+            this.pictureBox2.Location = new System.Drawing.Point(747, 136);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(360, 270);
             this.pictureBox2.TabIndex = 4;
@@ -117,9 +118,8 @@
             // 
             this.uiTextBox2.ButtonSymbolOffset = new System.Drawing.Point(0, 0);
             this.uiTextBox2.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.uiTextBox2.FillReadOnlyColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(249)))), ((int)(((byte)(255)))));
             this.uiTextBox2.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.uiTextBox2.Location = new System.Drawing.Point(491, 92);
+            this.uiTextBox2.Location = new System.Drawing.Point(486, 96);
             this.uiTextBox2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.uiTextBox2.MinimumSize = new System.Drawing.Size(1, 16);
             this.uiTextBox2.Name = "uiTextBox2";
@@ -138,9 +138,8 @@
             // 
             this.uiTextBox3.ButtonSymbolOffset = new System.Drawing.Point(0, 0);
             this.uiTextBox3.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.uiTextBox3.FillReadOnlyColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(249)))), ((int)(((byte)(255)))));
             this.uiTextBox3.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.uiTextBox3.Location = new System.Drawing.Point(864, 92);
+            this.uiTextBox3.Location = new System.Drawing.Point(859, 96);
             this.uiTextBox3.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.uiTextBox3.MinimumSize = new System.Drawing.Size(1, 16);
             this.uiTextBox3.Name = "uiTextBox3";
@@ -159,9 +158,8 @@
             // 
             this.uiTextBox4.ButtonSymbolOffset = new System.Drawing.Point(0, 0);
             this.uiTextBox4.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.uiTextBox4.FillReadOnlyColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(249)))), ((int)(((byte)(255)))));
             this.uiTextBox4.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.uiTextBox4.Location = new System.Drawing.Point(111, 37);
+            this.uiTextBox4.Location = new System.Drawing.Point(106, 41);
             this.uiTextBox4.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.uiTextBox4.MinimumSize = new System.Drawing.Size(1, 16);
             this.uiTextBox4.Name = "uiTextBox4";
