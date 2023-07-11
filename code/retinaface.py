@@ -605,7 +605,7 @@ class Retinaface(object):
         # ---------------------------------------------------#
         model_test = AntiSpoofPredict(0)
         image_cropper = CropImage()
-        model_dir = r"G:\data\Silent-Face-Anti-Spoofing-master\resources\anti_spoof_models"
+        model_dir = r"model_data/FAS"
 
         # -----------------------------------------------#
         #   Facenet编码部分-开始
