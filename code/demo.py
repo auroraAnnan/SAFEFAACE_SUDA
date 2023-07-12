@@ -1,3 +1,5 @@
+import socket
+import numpy as np
 import time
 from threading import Event
 import cv2
@@ -67,6 +69,7 @@ while True:
 
         fps = 0.0
         real = 0
+        flat = 0
         while (True):
             # image_cropper = CropImage()
             t1 = time.time()
@@ -93,7 +96,7 @@ while True:
                             cv2.imshow("register", frame)
                             crop_img = cv2.cvtColor(crop_img, cv2.COLOR_RGB2BGR)
                             name = input("用户名: ")
-                            retinaface.register(crop_img, name)
+                            flat = retinaface.register(crop_img, name)
                             capture.release()
                             break
                 else:
@@ -107,7 +110,9 @@ while True:
             if c == 27:
                 capture.release()
                 break
-        print("Register Done!")
+        if not flat:
+            print("Register Done!")
+            flat = 0
         capture.release()
         cv2.destroyAllWindows()
 
