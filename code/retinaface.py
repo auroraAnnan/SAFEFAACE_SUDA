@@ -21,7 +21,7 @@ from utils.utils_bbox import (decode, decode_landm, non_max_suppression,
                               retinaface_correct_boxes)
 import os
 
-
+from database_connect import putDatabase, putDatabaseAndTable, load_data
 # --------------------------------------#
 #   写中文需要转成PIL来写。
 # --------------------------------------#
@@ -132,9 +132,12 @@ class Retinaface(object):
         self.generate()
 
         try:
-            self.known_face_encodings = np.load(
-                "model_data/{backbone}_face_encoding.npy".format(backbone=self.facenet_backbone))
-            self.known_face_names = np.load("model_data/{backbone}_names.npy".format(backbone=self.facenet_backbone))
+            load_lst = load_data()
+            self.known_face_names = load_lst[0]
+            self.known_face_encodings = load_lst[1]
+            # self.known_face_encodings = np.load(
+            #     "model_data/{backbone}_face_encoding.npy".format(backbone=self.facenet_backbone))
+            # self.known_face_names = np.load("model_data/{backbone}_names.npy".format(backbone=self.facenet_backbone))
         except:
             if not encoding:
                 print("载入已有人脸特征失败，请检查model_data下面是否生成了相关的人脸特征文件。")
@@ -184,8 +187,10 @@ class Retinaface(object):
             face_encoding = self.facenet(crop_img)[0].cpu().numpy()
             face_encoding = np.expand_dims(face_encoding, 0)
             self.known_face_encodings = np.append(self.known_face_encodings, face_encoding, axis=0)
+        flat = putDatabase(name, face_encoding)
         np.save("model_data/{backbone}_face_encoding.npy".format(backbone=self.facenet_backbone), self.known_face_encodings)
         np.save("model_data/{backbone}_names.npy".format(backbone=self.facenet_backbone), self.known_face_names)
+        return flat
 
     def encode_face_dataset(self, image_paths, names):
         face_encodings = []
@@ -305,7 +310,7 @@ class Retinaface(object):
 
                 face_encoding = self.facenet(crop_img)[0].cpu().numpy()
                 face_encodings.append(face_encoding)
-
+        putDatabaseAndTable(names, face_encodings)
         np.save("model_data/{backbone}_face_encoding.npy".format(backbone=self.facenet_backbone), face_encodings)
         np.save("model_data/{backbone}_names.npy".format(backbone=self.facenet_backbone), names)
 
@@ -381,7 +386,7 @@ class Retinaface(object):
             boxes_conf_landms = non_max_suppression(boxes_conf_landms, self.confidence)
 
             if len(boxes_conf_landms) <= 0:
-                return False, False, False, False
+                return False, False, False, False, old_image
 
             # ---------------------------------------------------------#
             #   如果使用了letterbox_image的话，要把灰条的部分去除掉。
@@ -412,8 +417,10 @@ class Retinaface(object):
                     and im_width * 0.1 <= boxes_conf_landm[0] <= im_width * 0.4:
                 flag = True
             if not flag:
-                return flag, flag, flag, flag
-            return boxes_conf_landm, crop_img, True, image_bbox
+                return flag, flag, flag, flag, old_image
+            b = list(map(int, boxes_conf_landm))
+            cv2.rectangle(old_image, (b[0], b[1]), (b[2], b[3]), (0, 0, 255), 2)
+            return boxes_conf_landm, crop_img, True, image_bbox, old_image
 
     # -----------------------------------------------#
     #   利用活体检测模型，判别是否为活体
