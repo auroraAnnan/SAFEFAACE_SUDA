@@ -69,6 +69,7 @@
             this.end.TabIndex = 1;
             this.end.Text = "停止检测";
             this.end.TipsFont = new System.Drawing.Font("微软雅黑", 12F);
+            this.end.Click += new System.EventHandler(this.end_Click);
             // 
             // uiTextBox1
             // 

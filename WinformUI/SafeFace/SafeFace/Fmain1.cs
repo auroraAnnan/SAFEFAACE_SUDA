@@ -29,7 +29,6 @@ namespace SafeFace
             uiTextBox3.FillReadOnlyColor = mc;
             uiTextBox1.FillReadOnlyColor = Color.White;
 
-            //-------------------
             
         }
         static byte[] ReadData(NetworkStream stream)
@@ -77,6 +76,7 @@ namespace SafeFace
 
         private void uiButton1_Click(object sender, EventArgs e)
         {
+            ifClick = true;
             int port = 8888;  // 与Python客户端相同的端口号
             TcpListener listener = new TcpListener(IPAddress.Any, port);
             listener.Start();
@@ -85,18 +85,21 @@ namespace SafeFace
             TcpClient client = listener.AcceptTcpClient();
             Console.WriteLine("已连接到Python客户端.");
 
-            // 读取图像字节流
-            byte[] imageBytes = ReadData(client.GetStream());
-            Console.WriteLine(imageBytes[0]);
-            Console.WriteLine(imageBytes[1]);
-            Console.WriteLine(imageBytes[2]);
-            Console.WriteLine(imageBytes[3]);
-            // 将字节流转换为图像
-            Image image = ByteArrayToImage(imageBytes);
+            while (ifClick)
+            {
+                // 读取图像字节流
+                byte[] imageBytes = ReadData(client.GetStream());
+                Console.WriteLine(imageBytes[0]);
+                Console.WriteLine(imageBytes[1]);
+                Console.WriteLine(imageBytes[2]);
+                Console.WriteLine(imageBytes[3]);
+                // 将字节流转换为图像
+                Image image = ByteArrayToImage(imageBytes);
 
-            // 在此处进行图像处理操作
-            // ...
-            pictureBox1.Image = image;
+                // 在此处进行图像处理操作
+                // ...
+                pictureBox1.Image = image;
+            }
             // 关闭连接
             client.Close();
             listener.Stop();
@@ -105,6 +108,11 @@ namespace SafeFace
         private void uiTextBox1_TextChanged(object sender, EventArgs e)
         {
             
+        }
+
+        private void end_Click(object sender, EventArgs e)
+        {
+            ifClick = false;
         }
     }
 }
