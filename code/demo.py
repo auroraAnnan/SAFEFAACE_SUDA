@@ -1,5 +1,3 @@
-import socket
-import numpy as np
 import time
 from threading import Event
 import cv2
@@ -81,9 +79,11 @@ while True:
             # 格式转变，BGRtoRGB
             frame = cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)
 
+
             # 进行检测
             # frame = np.array(retinaface.detect_image(frame))
-            boxes_conf_landm, crop_img, Flag, image_box = retinaface.getFace(frame)
+            b, crop_img, Flag, image_box, frame = retinaface.getFace(frame)
+
             if Flag:
                 label, score = retinaface.isReal(frame, image_box)
                 if label:
@@ -96,7 +96,7 @@ while True:
                             cv2.imshow("register", frame)
                             crop_img = cv2.cvtColor(crop_img, cv2.COLOR_RGB2BGR)
                             name = input("用户名: ")
-                            flat = retinaface.register(crop_img, name)
+                            retinaface.register(crop_img, name)
                             capture.release()
                             break
                 else:
@@ -111,8 +111,8 @@ while True:
                 capture.release()
                 break
         if not flat:
-            print("Register Done!")
             flat = 0
+            print("Register Done!")
         capture.release()
         cv2.destroyAllWindows()
 
@@ -147,13 +147,14 @@ while True:
             frame = cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)
 
             # 进行检测
-            boxes_conf_landm, crop_img, Flag, image_box = retinaface.getFace(frame)
+            b, crop_img, Flag, image_box, frame = retinaface.getFace(frame)
+
             if Flag:
                 label, score = retinaface.isReal(frame, image_box)
                 if label == 1:
                     real += 1
-                    if real == 10:
-                        frame, name = retinaface.identify(boxes_conf_landm, crop_img, frame)
+                    if real == 20:
+                        frame, name = retinaface.identify(b, crop_img, frame)
                         real = 0
                         if name == 'Unknown':
                             print('验证失败,身份未注册')
