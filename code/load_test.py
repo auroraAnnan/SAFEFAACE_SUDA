@@ -1,10 +1,10 @@
 import numpy as np
 
 # 指定要打开的.npy文件的路径
-file_path = "E:\Python datas\SAFEFAACE_SUDA\code\model_data\mobilenet_face_encoding.npy"
+file_path = "E:\Python datas\SAFEFAACE_SUDA\code\model_data\mobilenet_names.npy"
 
 # load函数
 data = np.load(file_path)
 
 # 打印数据
-print(data[0][127])
+print(data)
