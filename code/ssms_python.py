@@ -15,7 +15,7 @@ table_exists = cursor.fetchone() is not None
 if not table_exists:
     # 创建表
     cursor.execute('''CREATE TABLE [characters]
-                      ([name] VARCHAR(50) NOT NULL,
+                      ([name] VARCHAR(50) NOT NULL PRIMARY KEY,
                        [info] VARBINARY(MAX))''')
 
 # 读取人物名称文件
@@ -30,7 +30,7 @@ info = info_data.tolist()
 for i in range(len(names)):
     name = names[i]
     character_info = info[i]
-    character_info_np = np.array(character_info)
+    character_info_np = np.array(character_info, dtype=np.float64)
     character_info_bytes = character_info_np.tobytes()
 
     # 插入数据
