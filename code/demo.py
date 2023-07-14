@@ -5,7 +5,7 @@ from retinaface import Retinaface
 from utils.video import CameraThread, FileVideoStream
 
 retinaface = Retinaface()
-# ----------------------------------------------------------------------------------------------------------#
+# --------------------------------------------------------------------------------#
 #   video_path用于指定视频的路径，当video_path=0时表示检测摄像头
 #   想要检测视频，则设置如video_path = "xxx.mp4"即可，代表读取出根目录下的xxx.mp4文件。
 #   video_save_path表示视频保存的路径，当video_save_path=""时表示不保存
@@ -68,7 +68,7 @@ while True:
         fps = 0.0
         real = 0
         flat = 0
-        while (True):
+        while True:
             # image_cropper = CropImage()
             t1 = time.time()
             # 读取某一帧;
@@ -78,7 +78,6 @@ while True:
                 break
             # 格式转变，BGRtoRGB
             frame = cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)
-
 
             # 进行检测
             # frame = np.array(retinaface.detect_image(frame))
@@ -136,7 +135,7 @@ while True:
 
         fps = 0.0
         real = 0
-        while (True):
+        while True:
             t1 = time.time()
             # 读取某一帧;
             ref, frame = capture.read()
