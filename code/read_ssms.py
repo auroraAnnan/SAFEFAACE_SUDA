@@ -1,8 +1,11 @@
 import pyodbc
 import numpy as np
 
+from interface import database_interface
+
 # 连接到数据库
-conn = pyodbc.connect('DRIVER={SQL Server};SERVER=Legion-Y9000p\SQLEXPRESS;DATABASE=SafeFace;UID=sa;PWD=')
+conn = pyodbc.connect(database_interface('{SQL Server}',
+                                         r'LEGION-Y9000P\SQLEXPRESS', 'SafeFace', 'sa', ''))
 
 # 创建一个游标对象，用于执行 SQL 语句
 cursor = conn.cursor()
