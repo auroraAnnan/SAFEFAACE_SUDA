@@ -21,7 +21,7 @@ from utils.utils_bbox import (decode, decode_landm, non_max_suppression,
                               retinaface_correct_boxes)
 import os
 
-from database_connect import putDatabase, putDatabaseAndTable, load_data
+from database_connect import put_database, put_database_and_table, load_data
 # --------------------------------------#
 #   写中文需要转成PIL来写。
 # --------------------------------------#
@@ -187,7 +187,7 @@ class Retinaface(object):
             face_encoding = self.facenet(crop_img)[0].cpu().numpy()
             face_encoding = np.expand_dims(face_encoding, 0)
             self.known_face_encodings = np.append(self.known_face_encodings, face_encoding, axis=0)
-        flat = putDatabase(name, face_encoding)
+        flat = put_database(name, face_encoding)
         np.save("model_data/{backbone}_face_encoding.npy".format(backbone=self.facenet_backbone), self.known_face_encodings)
         np.save("model_data/{backbone}_names.npy".format(backbone=self.facenet_backbone), self.known_face_names)
         return flat
@@ -310,7 +310,7 @@ class Retinaface(object):
 
                 face_encoding = self.facenet(crop_img)[0].cpu().numpy()
                 face_encodings.append(face_encoding)
-        putDatabaseAndTable(names, face_encodings)
+        put_database_and_table(names, face_encodings)
         np.save("model_data/{backbone}_face_encoding.npy".format(backbone=self.facenet_backbone), face_encodings)
         np.save("model_data/{backbone}_names.npy".format(backbone=self.facenet_backbone), names)
 
